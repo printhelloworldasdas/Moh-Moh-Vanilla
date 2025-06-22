@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Moh Moh Vanilla</title>
+	<link rel="shortcut icon" type="image/png" href="./img/mohmoh_icon.png" />
+	<meta name="viewport"
+	  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, viewport-fit=cover">
+	<meta name="mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-status-bar-style"
+          content="black-translucent">
+	<meta name="description" content='MohMoh Vanilla is a fork of original mohmoh for hackers'>
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="pragma" content="no-cache">
+	<link rel="stylesheet" href="css/main.css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
+	<script src = "./serverData.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./fixbunPLSdle.js"></script>
+</head>
+
+<body>
+	<div id="promoImg" style="display: none"></div>
+	<div id="shutdownDisplay" hidden></div>
+
+	<div id="adCard">
+		<div id="moomooio_728x90_home" style="display:none;"></div>
+		<div id="moomooio_300x250_1" style="display:none;"></div>
+	</div>
+	<div id="mainMenu">
+		<div id="menuContainer">
+			<div id="gameName">MohMoh Vanilla</div>
+			<div id="loadingText">Connecting</div>
+				<div id="menuCardHolder" class="flex-container">
+				<div class="menuCard" id="main-menu-left-ad" class="flex-items"></div>
+					<div class="menuCard flex-items" id="setupCard">
+						<input type="text" id="nameInput" placeholder="Your Name" maxlength="15"
+							value="unknown"></input>
+						<div id="enterGame" class="menuButton"><span>Play</span></div>
+						<div id="mobileDownloadButtonContainer">
+						</div>
+					</div>
+					<div id="promoImgHolder" class="menuCard flex-items" style="display:block;margin-top:16px;padding-bottom:12px;"
+						id="setupCard">
+						<div class="menuHeader">Bundle Options</div>
+						<div class="settingRadio"><input id="nativeResolution" type="checkbox" /> Enable FullHD
+						</div>
+						<div class="settingRadio"><input id="showPing" type="checkbox" /> Show Ping</div>
+						<div id="smallLinks"></div>
+						<div class="menuText">
+							Join our <a href="https://dsc.gg/mva-atomic" target="_blank" class="menuLink">Discord!</a>
+						</div>
+
+					</div>
+				<div id="rightCardHolder">
+					<div class="menuCard flex-items" id="guideCard">
+						<select id="serverBrowser"></select>
+						<div id="altServer"></div>
+						<div class="menuHeader" style="margin-top:10px">Choose your skin</div>
+						<div id="skinColorHolder"></div>
+						<div class="menuText">
+    By using our website you should confirm our <a href = "/docs/privacy-policy.txt"> privacy policy </a>
+      </div>
+						<div id="mobileInstructions" class="menuText"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="settingsButton" class="ytLink">
+			<i class="material-icons" style="font-size:30px;vertical-align:middle">&#xE8B8;</i>
+		</div>
+		<div id="partyButton" class="inParty"><span></span>		</div>
+		<div id="joinPartyButton" class="ytLink"><span>Join</span></div>
+		<div id="linksContainer1"><a href="./docs/versions.txt" target="_blank" class="menuLink">VERSIONS</a></div>
+		<div id="linksContainer2"><a href="./docs/privacy.txt" target="_blank" class="menuLink">PRIVACY POLICY</a></div>
+		<div id="pingDisplay" hidden>Not connected</div>
+		<div id="youtuberOf">
+			<div class="spanLink" id="featuredYoutube">
+			</div>
+		</div>
+	</div>
+	<div id="diedText">GG</div>
+	<div id="gameUI" style="display: none;">
+		<div id="chatHolder" style="display:none;">
+			<input id="chatBox" type="text" placeholder="Enter Message" maxlength="30"></input>
+		</div>
+		<div id="upgradeHolder"></div>
+		<div id="upgradeCounter"></div>
+		<div id="ageText"></div>
+		<div id="ageBarContainer">
+			<div id="ageBar">
+				<div id="ageBarBody"></div>
+			</div>
+		</div>
+		<div id="topInfoHolder">
+			<div id="leaderboard">
+				<div id="leaderboardData"></div>
+			</div>
+			<div></div>
+			<div id="killCounter" class="resourceDisplay"></div>
+		</div>
+		<div id="itemInfoHolder" class="uiElement">
+		</div>
+		<div id="resDisplay">
+			<div id="foodDisplay" class="resourceDisplay"></div>
+			<div id="woodDisplay" class="resourceDisplay"></div>
+			<div id="stoneDisplay" class="resourceDisplay"></div>
+			<div id="scoreDisplay" class="resourceDisplay"></div>
+		</div>
+		<div id="actionBar"></div>
+		<div id="noticationDisplay" style="display:none"></div>
+		<div id="allianceButton" class="uiElement gameButton">
+			<i class="material-icons" style="font-size:40px;vertical-align:middle">&#xE8D3;</i>
+		</div>
+		<div id="storeButton" class="uiElement gameButton">
+			<i class="material-icons" style="font-size:40px;vertical-align:middle">&#xE8D1;</i>
+		</div>
+		<div id="chatButton" class="uiElement gameButton">
+			<i class="material-icons" style="font-size:40px;vertical-align:middle">&#xE8AF;</i>
+		</div>
+		<canvas id="mapDisplay">
+		</canvas>
+		<div id="storeMenu">
+			<div style="padding-bottom:15px">
+				<div class="storeTab" style="margin-right:10px" onclick="changeStoreIndex(0)">Hats</div>
+				<div class="storeTab" onclick="changeStoreIndex(1)">Accessories</div>
+			</div>
+			<div id="storeHolder">
+			</div>
+		</div>
+		<div id="allianceMenu">
+			<div id="allianceHolder"></div>
+			<div id="allianceManager"></div>
+		</div>
+	</div>
+	<canvas id="gameCanvas"></canvas>
+	<div id ='goofy1' style="display:none"><div id ='goofy2' style="display:none"><div id ='goofy' style="display:none">
+	<div id='cdm-zone-end'></div>
+	<div id='onetrust-consent-sdk'></div>
+	<div id='pre-content-container'></div>
+	<div id='ot-sdk-btn-floating'></div>
+	</div></div></div>
+	<script src="bundle.js"></script>
+</body>
+</html>
